@@ -16,95 +16,134 @@
 <body>
 
     <div class="container">
-        <div class="row align-items-center justify-content-center"  id="row">
-            <div class="col text-center " id="col">
+        <div class="row align-items-center justify-content-center" id="row">
+            <table class="m-auto " id="calc">
+                <tr id="top">
+                    <td colspan=4 id="input">
+                        <div id="date" class="py-0">
 
-                <table class="m-auto" id="calc">
-                    <tr class="" id="top">
-                        <td colspan=4 id="input">
-                            0
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="butn" id="clear">
-                            <div class="bg-primary rounded-circle">
-                                C
-                            </div>
-                        </td>
-                        <td class="butn1"><i class="fas fa-divide"></i></td>
-                        <td class="butn2"><i class="fas fa-times"></i></td>
-                        <td class="butn3"><i class="fas fa-minus"></i></td>
-                    </tr> 
-                    <tr>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td rowspan=2 class="butn4"><i class="fas fa-plus"></i></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td rowspan=2 class="butn5"><i class="fas fa-equals"></i></td>
-                    </tr>
-                    <tr>
-                        <td >0</td>
-                        <td>.</td>
-                        <td>&nbsp;</td>
 
-                    </tr>
-                </table>
+                        </div>
+
+
+
+                        <div id="list" class="w-100 text-break">&nbsp;</div>
+                        <div id="result" class="w-100 text-break">0</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="op " id="clear">
+                        <div class=" rounded-circle op-circle">
+                            C</div>
+                    </td>
+                    <td id="butn1" class="op">
+                        <div class="rounded-circle op-circle">
+                            <i class="fas fa-divide"></i></div>
+                    </td>
+                    <td id="butn2" class="op">
+                        <div class="rounded-circle op-circle">
+                            <i class="fas fa-times"></i></div>
+                    </td>
+                    <td id="butn3" class="op">
+                        <div class="rounded-circle op-circle">
+                            <i class="fas fa-minus"></i></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><div class="digits">7</div>
+                    </td>
+                    <td><div class="digits">8</div>
+                    </td>
+                    <td><div class="digits">9</div>
+                    </td>
+
+
+                    <td rowspan=2 id="butn4">
+                        <div class="op-square1">
+                                <i class="fas fa-plus"></i>
+                        </div>
+                    </td>
             </div>
+    </div>
+    </tr>
+    <tr>
+        <td><div class="digits">4</div></td>
+        <td><div class="digits">5</div></td>
+        <td><div class="digits">6</div></td>
+    </tr>
+    <tr>
+        <td><div class="digits">1</div></td>
+        <td><div class="digits">2</div></td>
+        <td><div class="digits">3</div></td>
+
+
+        <td rowspan=2 id="butn5">
+            <div class="op-square2 ">
+                    <i class="fas fa-equals"></i>
+                    </div>
+        </td>
         </div>
+        </div>
+    </tr>
+    <tr>
+        <td><div class="digits">0</div></td>
+        <td><div class="digits">.</div></td>
+        <td>&nbsp;</td>
+
+        </td>
+    <tr>
+        <td colspan=4 class="bottom"></td>
+    </tr>
+
+
+
+    </table>
+    </div>
 
     </div>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/wow.min.js"></script>
     <script>
+                           
+        let Today=new Date();
+        let date=document.getElementById("date");                 
+        date.innerText=(Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日");
+
         input = document.getElementById("input");
+        list = document.getElementById("list");
+        result = document.getElementById("result");
         td = document.querySelectorAll("#calc td");
-        let divs = $(".butn1").text();
-        let times = $(".butn2").text();
-        let minus = $(".butn3").text();
-        let plus = $(".butn4").text(); 
-        let equl = $(".butn5").text(); 
-        console.log(divs);
-        
 
         operator = ["/", "*", "-", "+", "Enter", ".", "Delete"];
 
         for (let i = 0; i < td.length; i++) { //限制i數字範圍為所有td的數量
             if (td[i].id != "input") {
                 td[i].onclick = () => {
-                    console.log(td[i]);
-                    console.log($(".butn1").text())
-                    switch(td[i].innerText){
-                        case "divs":
-                            addNumber("/");
-                            console.log('1234');
-                            break;
-                        case "times":
-                            addNumber("*");
-                            break;
-                        case "minus":
-                            addNumber("-");
-                            break;
-                        case "plus":
-                            addNumber("+");
-                            break;
-                        case "equl":
-                            addNumber("=");
-                            break;
-                        default:
+
+                    if (td[i].id == "butn1") {
+                        console.log("1234");
+                        addNumber("/");
+
+                    } else if (td[i].id == "butn2") {
+                        console.log("2234");
+                        addNumber("*");
+
+                    } else if (td[i].id == "butn3") {
+                        console.log("3234");
+                        addNumber("-");
+
+                    } else if (td[i].id == "butn4") {
+                        console.log("4234");
+                        addNumber("+");
+
+                    } else if (td[i].id == "butn5") {
+                        console.log("5234");
+                        addNumber("=");
+
+                    } else {
                         addNumber(td[i].innerText);
                     }
-
                 }
 
             }
@@ -115,21 +154,29 @@
             if (!isNaN(key) || operator.includes(key)) {
                 addNumber(key);
                 if (key == "Delete") {
-                input.innerText = "0";
+                    list.innerHTML = "&nbsp;";
+                    result.innerText = "0";
                 }
             }
         }
 
         addNumber = (number) => {
             if (number == "C") {
-                input.innerText = "0";
+                list.innerHTML = "&nbsp;";
+                result.innerText = "0";
             } else if (number == "=" || number == "Enter") {
-                input.innerText = eval(input.innerText);
+                r = eval(list.innerText);
+                if (Number.isInteger(r)) {
+                    result.innerText = r;
+                } else {
+                    result.innerText = eval(r).toFixed(4);
+                }
+
             } else {
                 if (input.innerText == "0") {
-                    input.innerText = number;
+                    list.innerText = number;
                 } else {
-                    input.innerText += number;
+                    list.innerText += number;
                 }
             }
         }
