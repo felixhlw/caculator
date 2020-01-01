@@ -8,7 +8,8 @@ body{
 * {
     font-family: Arial, Helvetica, sans-serif,Microsoft Jhenghei;
     padding: 0px;
-    font-size: 30px;
+    font-size: 1.35rem;
+/*     font-size: 30px; */
     color: white;
 }
 .container{
@@ -30,12 +31,13 @@ body{
     width: calc( 70vh * 0.58 ); 
     border-radius: 20px;
     background: #4190e9;
-    padding: 0 0 0 20px ;
+    padding: 0 0 0 0px ;
+/*     padding: 0 0 0 20px ; */
     overflow: hidden;
     box-shadow:10px 30px 25px -5px rgba(73, 121, 211, 0.5);
     position: relative;
     text-align: center;
-
+    border-spacing: 0px !important;
    /*  align-self: center; */
     
 }
@@ -43,7 +45,8 @@ body{
 #calc td {
     border: solid 0px black;
     margin: 5px;
-    padding:15px ;
+    padding:0.54rem ; 
+    /* padding:15px ; */
     line-height: calc( 70vh * 0.1 ) ;
 }
 /*  */
@@ -82,6 +85,7 @@ body{
 .op-square1{
     /*     width: calc( 70vh * 0.1 );
         height: calc( 70vh * 0.1 ) ; */
+        width: calc( 70vh * 0.1 );
         height: 100%;
         background: #3382db;
         border-radius: 50px;
@@ -91,6 +95,7 @@ body{
 .op-square2{
 /*     width: calc( 70vh * 0.1 );
     height: calc( 70vh * 0.1 ) ; */
+    width: calc( 70vh * 0.1 );
     height: 100%;
     background: #04e400;
     border-radius: 50px;
@@ -144,27 +149,25 @@ body{
 #input{
     margin:0;
     padding:0;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 #date{
-    font-size: 20px;
+    font-size: 0.8rem;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 0.75rem;
     opacity: 0.4;
-    
 }
 #list{
     text-align: right;
-    font-size: 20px;
+    font-size: 0.85rem;
     color: white;
-    padding-right: 20px;
+    padding-right: 0.72rem;
     opacity: 0.7;
-    
 }
 #result{
-    padding-right: 20px;
+    padding-right: 0.7rem;
     text-align: right;
-    font-size: 60px;
+    font-size: 2.3rem;
     color: white;
 }
 
@@ -183,4 +186,119 @@ body{
 padding: 0 !important;
 padding-bottom: 5px !important;
 margin: 0 !important;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    * {
+        font-size: 1.1rem;
+     }
+     #calc td {
+        margin: 5px;
+        padding:0.38rem ; 
+        line-height: calc( 70vh * 0.1 ) ;
+    }
+    #result{
+        padding-right: 0.5rem;
+        font-size: 1.5rem;
+    }
+    #list{
+        font-size: 0.75rem;
+        padding-right: 0.5rem;
+    }
+    #date{
+        font-size: 0.7rem;
+        padding-left: 0.5rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    #result{
+        padding-right: 0.7rem;
+        font-size: 2.3rem;
+    }
+    #list{
+        font-size: 0.85rem;
+        padding-right: 0.72rem;
+    }
+    #date{
+        font-size: 0.8rem;
+        padding-left: 0.75rem;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    * {
+        font-size: 1.35rem;
+     }
+     #calc td {
+        margin: 5px;
+        padding:0.52rem ; 
+        line-height: calc( 70vh * 0.1 ) ;
+    }
+    #result{
+        padding-right: 0.7rem;
+        font-size: 2.3rem;
+    }
+    #list{
+        font-size: 0.85rem;
+        padding-right: 0.72rem;
+    }
+    #date{
+        font-size: 0.8rem;
+        padding-left: 0.75rem;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    * {
+        font-size: 1.35rem;
+     }
+     #calc td {
+        margin: 5px;
+        padding:0.52rem ; 
+        line-height: calc( 70vh * 0.1 ) ;
+    }
+    #result{
+        padding-right: 0.7rem;
+        font-size: 2.3rem;
+    }
+    #list{
+        font-size: 0.85rem;
+        padding-right: 0.72rem;
+    }
+    #date{
+        font-size: 0.8rem;
+        padding-left: 0.75rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    * {
+        font-size: 1.35rem;
+     } 
+     #calc td {
+        margin: 5px;
+        padding:0.54rem ; 
+        line-height: calc( 70vh * 0.1 ) ;
+    }
+    #result{
+        padding-right: 0.70rem;
+        font-size: 2.3rem;
+    }
+    #list{
+        font-size: 0.85rem;
+        padding-right: 0.72rem;
+    }
+    #date{
+        font-size: 0.8rem;
+        padding-left: 0.75rem;
+    }
+    
 }
